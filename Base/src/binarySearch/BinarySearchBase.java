@@ -2,11 +2,9 @@ package binarySearch;
 
 public class BinarySearchBase {
     public static void main(String[] args) {
-        int [] a = {1,5,7,8,10,27};
-        int result = binarySearch(a, 5);
+        int [] a = {1,5,5,7,7,8,10,27};
+        int result = binarySearchValueLeftmost(a, 6);
         System.out.println(result);
-        int resultAlter = binarySearchAlert(a,5);
-        System.out.println(resultAlter);
 
     }
 
@@ -63,5 +61,87 @@ public class BinarySearchBase {
         基础版：i和j都有可能是我们的查找目标
         改动版：j指向的一定不是我们的查找目标(重点) , j只作为一个边界
      */
+
+    // 二分查找Leftmost(如果存在相同目标元素，选择最左边的那个)
+    public static int binarySearchLeftmost(int[]a , int target){
+        // 设置指针和初始值（i和j都有可能是我们的查找目标）
+        int candidate = -1;
+        int i = 0;
+        int j = a.length - 1;
+        while (i <= j){
+            int m = (i+j) >>> 1;
+            if (target < a[m]){ // 目标值在左边
+                // 目标值小于中间值
+                j = m-1;
+            }else if (a[m] < target){ // 目标值在右边
+                // 目标值大于中间值
+                i = m+1;
+            }else {
+                candidate = m;
+                j = m-1;
+            }
+        }
+        return candidate;
+    }
+
+    // 二分查找Rightmost(如果存在相同目标元素，选择最左边的那个)
+    public static int binarySearchRightmost(int[]a , int target){
+        // 设置指针和初始值（i和j都有可能是我们的查找目标）
+        int candidate = -1;
+        int i = 0;
+        int j = a.length - 1;
+        while (i <= j){
+            int m = (i+j) >>> 1;
+            if (target < a[m]){ // 目标值在左边
+                // 目标值小于中间值
+                j = m-1;
+            }else if (a[m] < target){ // 目标值在右边
+                // 目标值大于中间值
+                i = m+1;
+            }else {
+                candidate = m;
+                i = m+1;
+            }
+        }
+        return candidate;
+    }
+
+    // 二分查找Leftmost(如果搜索不存在的数据，则返回比该数据大的最左边的那一个索引)
+    public static int binarySearchValueLeftmost(int[]a , int target){
+        // 设置指针和初始值（i和j都有可能是我们的查找目标）
+        int i = 0;
+        int j = a.length - 1;
+        while (i <= j){
+            int m = (i+j) >>> 1;
+            if (target <= a[m]){ // 目标值在左边
+                // 目标值小于中间值
+                j = m-1;
+            }else{ // 目标值在右边
+                // 目标值大于中间值
+                i = m+1;
+            }
+        }
+        return i;
+    }
+
+    // 二分查找Rightmost(返回<=target的最靠右索引)
+    public static int binarySearchValueRightmost(int[]a , int target){
+        // 设置指针和初始值（i和j都有可能是我们的查找目标）
+        int i = 0;
+        int j = a.length - 1;
+        while (i <= j){
+            int m = (i+j) >>> 1;
+            if (target < a[m]){ // 目标值在左边
+                // 目标值小于中间值
+                j = m-1;
+            }else{ // 目标值在右边
+                // 目标值大于中间值
+                i = m+1;
+            }
+        }
+        return i-1;
+    }
+
+
 
 }
