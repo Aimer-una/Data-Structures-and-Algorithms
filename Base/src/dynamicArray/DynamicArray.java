@@ -17,4 +17,6 @@ public class DynamicArray {
         array[index] = element;
         size++;
     }
+
+
 }

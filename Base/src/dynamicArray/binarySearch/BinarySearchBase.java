@@ -1,4 +1,4 @@
-package binarySearch;
+package dynamicArray.binarySearch;
 
 public class BinarySearchBase {
     public static void main(String[] args) {
