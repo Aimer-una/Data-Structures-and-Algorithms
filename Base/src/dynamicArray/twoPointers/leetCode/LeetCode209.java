@@ -19,6 +19,7 @@ public class LeetCode209 {
                 i++;
             }
         }
-       return result;
+        // 处理怎么加都没有目标值的情况
+        return result == Integer.MAX_VALUE ? 0 : result;
     }
 }
