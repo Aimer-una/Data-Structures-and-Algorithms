@@ -64,7 +64,7 @@ public class LeetCode707 {
 
     // 删除某一个节点
     public void deleteAtIndex(int index){
-        if (index < 0 || index > size){
+        if (index < 0 || index >= size){
             return;
         }
         ListNode cur = head;
@@ -74,4 +74,6 @@ public class LeetCode707 {
         cur.next = cur.next.next;
         size--;
     }
+
+
 }
