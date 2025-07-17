@@ -3,6 +3,7 @@ package linkList.leetcode;
 import linkList.ListNode;
 
 public class LeetCode707 {
+    // 测试
     //size存储链表元素的个数
     private int size;
 
