@@ -8,6 +8,7 @@ public class LeetCode24 {
         ListNode dummyHead = new ListNode();
         dummyHead.next = head;
         ListNode cur = dummyHead;
+        // 1和3的指针方向没了，所以加入临时节点
         ListNode temp1;
         ListNode temp2;
         while (cur.next != null && cur.next.next != null){
