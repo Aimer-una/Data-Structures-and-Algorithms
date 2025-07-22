@@ -9,10 +9,37 @@ import java.util.Arrays;
  */
 public class LeetCode151 {
     public static void main(String[] args) {
-        String s1 = "  hello world  ";
-        String s = removeSpace(s1);
+        String s1 = "a good   example";
+        String s = reverseWords2(s1);
         System.out.println(s);
     }
+
+    /**
+     * 以下情况建议使用 StringBuilder：
+     * 频繁拼接字符串（如在循环中）
+     * 拼接大量字符串
+     * 对性能有要求的场景
+     */
+    public static String reverseWords2(String s) {
+        s = s.trim();                                    // 删除首尾空格
+        System.out.println(s);
+        int j = s.length() - 1, i = j;
+        // 如果你不用 StringBuilder，而是用 String res = ""，每加一个单词都要创建一个新字符串，效率会非常低。
+        StringBuilder res = new StringBuilder();
+        while (i >= 0) {
+            while (i >= 0 && s.charAt(i) != ' '){
+                i--;     // 搜索首个空格
+            }
+            // 包含起始索引 beginIndex 不包含结束索引 endIndex
+            res.append(s.substring(i + 1, j + 1) + " "); // 添加单词
+            while (i >= 0 && s.charAt(i) == ' ') {
+                i--;     // 跳过单词间空格
+            }
+            j = i;                                       // j 指向下个单词的尾字符
+        }
+        return res.toString().trim();                    // 转化为字符串并返回
+    }
+
     public String reverseWords(String s) {
         String noExtraSpace = removeSpace(s); // 去除空格
         char[] chars = noExtraSpace.toCharArray();
@@ -61,7 +88,7 @@ public class LeetCode151 {
             // 当遇到空格或到达末尾时，反转当前单词
             if (end == chars.length || chars[end] == ' ') {
                 reverse(chars, start, end - 1);
-                start = end + 1;
+                start = end + 1; // 更新 start 为下一个单词的起始位置（空格后一位）。
             }
         }
     }
