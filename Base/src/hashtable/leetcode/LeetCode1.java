@@ -29,7 +29,7 @@ public class LeetCode1 {
             if (map.containsKey(value)) {
                return new int [] {map.get(value),i};
             }
-            map.put(value,i);
+            map.put(nums[i], i);
         }
         return null;
     }
