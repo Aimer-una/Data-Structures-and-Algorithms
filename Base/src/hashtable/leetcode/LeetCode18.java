@@ -42,12 +42,12 @@ public class LeetCode18 {
                     }else if (sum < 0){
                         left++;
                     }else {
-                        result.add(Arrays.asList(nums[k],nums[i],nums[right],nums[left]));
+                        result.add(Arrays.asList(nums[k],nums[i],nums[left],nums[right]));
                         // 对nums[left]和nums[right]去重
-                        while (nums[right] == nums[right-1]){
+                        while (right > left && nums[right] == nums[right-1]){
                             right--;
                         }
-                        while (nums[left] == nums[left+1]){
+                        while (right > left && nums[left] == nums[left+1]){
                             left++;
                         }
                         right--;
