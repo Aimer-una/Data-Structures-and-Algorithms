@@ -16,6 +16,7 @@ public class LeetCode150 {
                 Integer pop1 = stack.pop();
                 Integer pop2 = stack.pop();
                 switch (token) {
+                    // 注意 - 和/ 需要特殊处理
                     case "+" -> stack.push(pop1 + pop2);
                     case "-" -> stack.push(pop2 - pop1);
                     case "*" -> stack.push(pop1 * pop2);
