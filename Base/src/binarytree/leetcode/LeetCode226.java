@@ -8,8 +8,8 @@ public class LeetCode226 {
             return null;
         }
         swapChildren(root);
-        swapChildren(root.left);
-        swapChildren(root.right);
+        invertTree(root.left);
+        invertTree(root.right);
         return root;
     }
 
