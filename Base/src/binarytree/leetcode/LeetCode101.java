@@ -1,6 +1,9 @@
 package binarytree.leetcode;
 
 import binarytree.TreeNode;
+
+import java.util.HashSet;
+
 // 对称二叉树
 public class LeetCode101 {
     public boolean isSymmetric(TreeNode root) {

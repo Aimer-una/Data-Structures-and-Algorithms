@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
+// 层序遍历
 public class LeetCode102 {
     public List<List<Integer>> resList = new ArrayList<List<Integer>>();
     public List<List<Integer>> levelOrder(TreeNode root) {
