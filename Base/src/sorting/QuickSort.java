@@ -1,7 +1,7 @@
 package sorting;
 
 import java.util.Arrays;
-
+// 快速排序
 public class QuickSort {
     public static void quickSort(int[]nums,int low,int high){
         if (low < high){
