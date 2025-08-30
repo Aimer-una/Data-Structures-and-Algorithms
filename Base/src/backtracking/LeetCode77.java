@@ -23,4 +23,17 @@ public class LeetCode77 {
             path.removeLast();
         }
     }
+
+    // 优化（剪枝）
+    public void backtrackingCut(int n, int k , int startIndex){
+        if (path.size() == k){
+            result.add(new ArrayList<>(path));
+            return;
+        }
+        for (int i = startIndex; i <= n-(k-path.size()) + 1; i++) {
+            path.add(i);
+            backtracking(n,k,i+1);
+            path.removeLast();
+        }
+    }
 }
