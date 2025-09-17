@@ -1,6 +1,6 @@
 package greed;
 // 53. 最大子数组和
-public class LeetCode {
+public class LeetCode53 {
     public int maxSubArray(int[] nums) {
         if (nums.length == 1){
             return nums[0];
