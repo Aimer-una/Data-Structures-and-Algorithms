@@ -3,7 +3,7 @@ package dynamicprograming;
 public class LeetCode62 {
     public int uniquePaths(int m, int n) {
         int[][] dp = new int[m][n];
-        // 初始化，因为只能往右边和下面走所以第一列和第一行都赋值成1
+        // 初始化，因为只能往右边和下面走所以第一列和第一行都赋值成1(m是行，n是列)
         for (int i = 0; i < m; i++) {
             dp[i][0] = 1;
         }
