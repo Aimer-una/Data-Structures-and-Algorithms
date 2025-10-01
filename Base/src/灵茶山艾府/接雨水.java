@@ -18,4 +18,31 @@ public class 接雨水 {
         }
         return sum;
     }
+
+    // 方法二（时间复杂度O(n),空间复杂度O(1)）
+    public int trap2(int[] height) {
+        int left = 0;
+        int right = height.length - 1;
+        int leftMax = 0;
+        int rightMax = 0;
+        int sum = 0;
+        while (left < right){
+            if (height[left] < height[right]){
+                if (height[left] > leftMax){
+                    leftMax = height[left];
+                    left++;
+                }else {
+                    sum += leftMax - height[left];
+                }
+            }else {
+                if (height[right] < rightMax){
+                    rightMax = height[right];
+                    right--;
+                }else {
+                    sum += rightMax + height[right];
+                }
+            }
+        }
+        return sum;
+    }
 }
