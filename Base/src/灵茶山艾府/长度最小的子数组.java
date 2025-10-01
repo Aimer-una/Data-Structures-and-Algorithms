@@ -14,6 +14,6 @@ public class 长度最小的子数组 {
                 left++;
             }
         }
-        return ans < n ? ans : 0;
+        return ans <= n ? ans : 0;
     }
 }
