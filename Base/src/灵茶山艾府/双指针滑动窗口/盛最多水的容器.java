@@ -1,4 +1,4 @@
-package 灵茶山艾府;
+package 灵茶山艾府.双指针滑动窗口;
 
 public class 盛最多水的容器 {
     public int maxArea(int[] height) {

@@ -1,4 +1,4 @@
-package 灵茶山艾府;
+package 灵茶山艾府.双指针滑动窗口;
 
 public class 长度最小的子数组 {
     public int minSubArrayLen(int target, int[] nums) {
