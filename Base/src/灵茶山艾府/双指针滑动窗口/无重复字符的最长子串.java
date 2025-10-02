@@ -15,9 +15,9 @@ public class 无重复字符的最长子串 {
             char c = s.charAt(i);
             // 如果 c 已经在当前窗口中出现过（注意：要 >= left）
             if (map.containsKey(c) && map.get(c) >= left){
-                left = map.get(c) + 1;
+                left = map.get(c) + 1; // 跳过重复字符
             }
-            map.put(c,i);
+            map.put(c,i); // 更新 c 的最新位置
             ans = Math.max(ans,i - left + 1);
         }
         return ans;
