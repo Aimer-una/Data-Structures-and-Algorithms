@@ -11,7 +11,7 @@ public class 定长子串中元音的最大数目 {
             }
             int left = i-k+1; // 更新窗口位置
             if (left < 0){
-                continue; // 如果还没有形成窗口k就跳到下一层循环。知道形成窗口
+                continue; // 如果还没有形成窗口k就跳到下一层循环。直到形成窗口
             }
             // 2. 更新答案
             ans = Math.max(ans,sum);
