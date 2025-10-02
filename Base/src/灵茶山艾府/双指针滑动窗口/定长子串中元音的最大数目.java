@@ -24,4 +24,35 @@ public class 定长子串中元音的最大数目 {
         }
         return ans;
     }
+
+    // 定滑模板
+    public int fixedWindowTemplate(String S, int k) {
+        char[] s = S.toCharArray();
+        int ans = 0;
+        int windowState = 0; // 本题是元音个数
+
+        for (int right = 0; right < s.length; right++) {
+            // 1️⃣ 右端点进入窗口，更新状态
+            if (isTarget(s[right])) {
+                windowState++;
+            }
+
+            int left = right - k + 1; // 计算当前窗口左边界
+            if (left < 0) {
+                continue; // 窗口还没满，跳过
+            }
+
+            // 2️⃣ 窗口已满，更新答案
+            ans = Math.max(ans, windowState);
+
+            // 3️⃣ 左端点离开窗口（为下一次循环准备）
+            if (isTarget(s[left])) {
+                windowState--;
+            }
+        }
+        return ans;
+    }
+    public boolean isTarget(Object c){
+        return true;
+    }
 }
