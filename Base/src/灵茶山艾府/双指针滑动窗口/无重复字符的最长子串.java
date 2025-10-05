@@ -22,4 +22,21 @@ public class 无重复字符的最长子串 {
         }
         return ans;
     }
+
+    public int lengthOfLongestSubstring1(String s) {
+        char[] charArray = s.toCharArray();
+        int left = 0;
+        int ans = 0;
+        int [] arr = new int[128];
+        for (int i = 0; i < charArray.length; i++) {
+            char c = charArray[i];
+            arr[c]++;
+            while (arr[c] > 1){
+                arr[charArray[left]]--;
+                left++;
+            }
+            ans = Math.max(ans,i-left+1);
+        }
+        return ans;
+    }
 }
