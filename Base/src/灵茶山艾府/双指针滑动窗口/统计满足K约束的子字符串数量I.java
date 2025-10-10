@@ -7,7 +7,7 @@ public class 统计满足K约束的子字符串数量I {
         int ans = 0;
         for (int i = 0; i < s.length(); i++) {
             arr[s.charAt(i)- '0'] ++;
-            while (arr[0] > k || arr[1] > k){
+            while (arr[0] > k && arr[1] > k){
                 arr[s.charAt(left) - '0']--;
                 left++;
             }
