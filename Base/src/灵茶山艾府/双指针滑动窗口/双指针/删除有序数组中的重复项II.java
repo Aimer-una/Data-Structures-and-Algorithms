@@ -15,4 +15,14 @@ public class 删除有序数组中的重复项II {
         }
         return index;
     }
+
+    public int removeDuplicates1(int[] nums) {
+        int stackSize = 2;
+        for (int i = 2; i < nums.length; i++) {
+            if (nums[i] != nums[stackSize - 2]){
+                nums[stackSize++] = nums[i];
+            }
+        }
+        return Math.min(nums.length,stackSize);
+    }
 }
