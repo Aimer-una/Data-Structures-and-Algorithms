@@ -12,4 +12,15 @@ public class 移动零 {
             nums[i] = 0;
         }
     }
+    public void moveZeroes1(int[] nums) {
+        int i0 = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0){
+                int temp = nums[i];
+                nums[i] = nums[i0];
+                nums[i0] = temp;
+                i0++;
+            }
+        }
+    }
 }
