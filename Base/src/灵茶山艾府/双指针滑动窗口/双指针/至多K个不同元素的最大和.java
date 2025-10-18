@@ -26,4 +26,26 @@ public class 至多K个不同元素的最大和 {
         }
         return ans;
     }
+
+    public int[] maxKDistinct1(int[] nums, int k) {
+        Arrays.sort(nums);
+        int actualK = removeDuplicates(nums);
+        int min = Math.min(actualK, k);
+        int[] ans = new int[min];
+        for (int i = 0; i < min; i++) {
+            ans[i] = nums[actualK - 1 - i];
+        }
+        return ans;
+    }
+
+    // 去重
+    private int removeDuplicates(int[] nums){
+        int k = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i-1]){
+                nums[k++] = nums[i];
+            }
+        }
+        return k;
+    }
 }
