@@ -13,4 +13,24 @@ public class 按奇偶排序数组 {
         }
         return nums;
     }
+    public int[] sortArrayByParity1(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right){
+            if (nums[left] % 2 == 0){
+                left++;
+            }else if (nums[right] % 2 == 1){
+                right--;
+            }else {
+                int tmp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = tmp;
+                // 交换后，问题变成 [i+1,j-1] 的子问题
+                left++;
+                right--;
+
+            }
+        }
+        return nums;
+    }
 }
