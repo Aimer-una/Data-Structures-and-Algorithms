@@ -13,6 +13,8 @@ public class 按奇偶排序数组II {
                 int temp = nums[i];
                 nums[i] = nums[j];
                 nums[j] = temp;
+                i+=2;
+                j+=2;
             }
         }
         return nums;
