@@ -23,4 +23,19 @@ public class 删除字符使字符串变好 {
         }
         return sb.toString();
     }
+
+    public String makeFancyString1(String s) {
+        StringBuilder sb = new StringBuilder();
+        int sum = 0;
+        for (int i = 0; i < s.length(); i++) {
+            sum++;
+            if (sum < 3){
+                sb.append(s.charAt(i));
+            }
+            if (i < s.length() - 1 && s.charAt(i) != s.charAt(i+1)){
+                sum = 0;
+            }
+        }
+        return sb.toString();
+    }
 }
