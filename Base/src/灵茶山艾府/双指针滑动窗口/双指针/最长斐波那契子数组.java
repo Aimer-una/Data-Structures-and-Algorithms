@@ -5,11 +5,11 @@ public class 最长斐波那契子数组 {
         int ans = 2;
         int start = 0;
         for (int i = 2; i < nums.length; i++) {
-            if (nums[i] != nums[i-1] + nums[i-2]){
-                ans = Math.max(ans,i-start);
+            if (nums[i] != nums[i - 1] + nums[i - 2]) {
+                ans = Math.max(ans, i - start);
                 start = i - 1;
             }
         }
-        return Math.max(ans,nums.length - start);
+        return Math.max(ans, nums.length - start);
     }
 }
