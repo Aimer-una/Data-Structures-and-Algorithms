@@ -5,7 +5,9 @@ public class 最长奇偶子数组 {
         int n = nums.length;
         int i = 0;
         int ans = 0;
+        // 第一个元素必须是偶数,切小于Threshold
         while (i < n){
+            // 检查当前位置能否作为合法起点
             // 必须是偶数开头
             if (nums[i] > threshold || nums[i] % 2 != 0){
                 i++;
