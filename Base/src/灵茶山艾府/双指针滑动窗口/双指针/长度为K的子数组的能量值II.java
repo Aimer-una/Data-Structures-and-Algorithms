@@ -21,4 +21,29 @@ public class 长度为K的子数组的能量值II {
         }
         return ans;
     }
+
+    public int[] resultsArray1(int[] nums, int k) {
+        int[] ans = new int[nums.length - k + 1];
+        Arrays.fill(ans,-1);
+        int i = 0;
+        int n = nums.length;
+        while (i < n){
+            int start = i;
+            i++;
+            while (i < n && nums[i] == nums[i-1] + 1){
+                i++;
+            }
+            int len = i - start;
+            if (len >= k){
+                int x = nums[i-1];
+                int j =  i-k;
+                while (j >= start){
+                    ans[j] = x;
+                    x--;
+                    j--;
+                }
+            }
+        }
+        return ans;
+    }
 }
