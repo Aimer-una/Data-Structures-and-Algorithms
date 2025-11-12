@@ -8,7 +8,6 @@ public class 咒语和药水的成功对数 {
         System.out.println(Arrays.toString(ints));
     }
     public static int[] successfulPairs(int[] spells, int[] potions, long success) {
-
         Arrays.sort(potions);
         int index = 0;
         int[] ans = new int[spells.length];
@@ -16,7 +15,7 @@ public class 咒语和药水的成功对数 {
             int left = 0;
             int right = potions.length - 1;
             // 寻找目标值
-            long target =  ((spells[i] + success - 1) / spells[i]);
+            long target =  ((spells[i] + success - 1) / spells[i]); // 向上取整公式
             while (left <= right){
                 int mid = left + right >>> 1;
                 if (potions[mid] >= target){
