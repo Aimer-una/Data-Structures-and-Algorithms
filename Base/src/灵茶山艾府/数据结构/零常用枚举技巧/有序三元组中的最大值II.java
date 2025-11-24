@@ -19,4 +19,17 @@ public class 有序三元组中的最大值II {
         }
         return ans;
     }
+
+    // 相当于卖卖股票问题
+    public long maximumTripletValue1(int[] nums) {
+        int preMax = 0;
+        int diffMax = 0;
+        long ans = 0;
+        for (int x : nums) {
+            ans = Math.max(ans,(long) diffMax * x);
+            diffMax = Math.max(diffMax,preMax - x);
+            preMax = Math.max(preMax,x);
+        }
+        return ans;
+    }
 }
