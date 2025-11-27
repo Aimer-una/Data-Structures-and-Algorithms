@@ -13,12 +13,15 @@ public class 对角线上不同值的数量差 {
             int minJ = Math.max(n-k,0);
             int maxJ = Math.min(n+m-1-k,n-1);
             set.clear();
+            // 从左上到右下
             for (int j = minJ ; j <= maxJ; j++) {
                 int i = k - n + j;
                 ans[i][j] = set.size();
                 set.add(grid[i][j]);
             }
             set.clear();
+
+            // 从右下到左上
             for (int j = maxJ; j >= minJ; j++) {
                 int i = k - n + j;
                 ans[i][j] = Math.abs(ans[i][j] - set.size());
