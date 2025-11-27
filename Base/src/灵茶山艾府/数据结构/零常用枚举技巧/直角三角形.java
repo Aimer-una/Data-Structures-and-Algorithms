@@ -7,9 +7,9 @@ public class 直角三角形 {
         int n = grid[0].length;
         int[] colSum = new int[n];
         Arrays.fill(colSum,-1);
-        for (int[] col : grid) {
+        for (int[] row  : grid) {
             for (int j = 0; j < n; j++) {
-                colSum[j] += col[j];
+                colSum[j] += row [j];
             }
         }
 
