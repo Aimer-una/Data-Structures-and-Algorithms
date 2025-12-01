@@ -26,10 +26,10 @@ public class 最大子数组和 {
         int minPreSum = 0;
         int preSum = 0;
         for (int num : nums) {
-            preSum += num;
-            ans = Math.max(preSum - minPreSum,ans);
+            preSum += num; // 当前的前缀和
+            ans = Math.max(preSum - minPreSum,ans); // 减去前缀和的最小值
             if (preSum < minPreSum){
-                minPreSum = preSum;
+                minPreSum = preSum; // 维护前缀和的最小值
             }
         }
         return ans;
