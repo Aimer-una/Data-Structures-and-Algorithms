@@ -19,8 +19,8 @@ public class 连续的子数组和 {
             if (s < 0){
                 s += k;
             }
+            // 同余定义（只要它们的余数相同就可以被整除）
             if (cnt.containsKey(s)){
-                // 同余定义（只要它们的余数相同就可以被整除）
                 if (i - cnt.get(s) >= 2){
                     return true;
                 }
