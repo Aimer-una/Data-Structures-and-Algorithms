@@ -9,7 +9,7 @@ public class 拼车 {
             cnt[trip[2]] -= trip[0];
         }
         // 前缀和
-        for (int i = 1; i <= cnt.length; i++) {
+        for (int i = 1; i < cnt.length; i++) {
             cnt[i] += cnt[i-1];
         }
         for (int i = 1; i < cnt.length; i++) {
