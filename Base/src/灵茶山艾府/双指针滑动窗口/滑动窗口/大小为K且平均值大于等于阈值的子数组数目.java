@@ -24,4 +24,21 @@ public class 大小为K且平均值大于等于阈值的子数组数目 {
         }
         return result;
     }
+
+    public int numOfSubarrays2(int[] arr, int k, int threshold) {
+        int ans = 0;
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            int left = i - k + 1;
+            if (left < 0){
+                continue;
+            }
+            if (sum >= threshold * k){
+                ans++;
+            }
+            sum -= arr[left];
+        }
+        return ans;
+    }
 }
