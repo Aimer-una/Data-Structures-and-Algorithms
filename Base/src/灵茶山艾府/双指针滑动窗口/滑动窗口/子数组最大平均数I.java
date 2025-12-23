@@ -21,4 +21,19 @@ public class 子数组最大平均数I {
         }
         return ans;
     }
+
+    public double findMaxAverage2(int[] nums, int k) {
+        int ans = Integer.MIN_VALUE;
+        int maxSum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            maxSum += nums[i];
+            int left = i - k + 1;
+            if (left < 0){
+                continue;
+            }
+            ans = Math.max(ans,maxSum);
+            maxSum -= nums[left];
+        }
+        return (double) ans / k;
+    }
 }
