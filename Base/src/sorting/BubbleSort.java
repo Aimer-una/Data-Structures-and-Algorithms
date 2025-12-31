@@ -3,6 +3,7 @@ package sorting;
 import java.util.Arrays;
 
 public class BubbleSort {
+    // 冒泡排序
     public static void bubbleSort(int[]nums){
         if (nums == null || nums.length <= 1){
             return;
