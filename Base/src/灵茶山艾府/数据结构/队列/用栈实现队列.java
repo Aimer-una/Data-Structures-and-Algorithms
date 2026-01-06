@@ -15,6 +15,7 @@ public class 用栈实现队列 {
         inStack.push(x);
     }
 
+
     public int pop() {
         if (outStack.isEmpty()){
             in2out();
