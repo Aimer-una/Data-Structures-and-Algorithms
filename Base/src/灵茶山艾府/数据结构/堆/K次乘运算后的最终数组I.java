@@ -15,4 +15,19 @@ public class K次乘运算后的最终数组I {
         }
         return nums;
     }
+
+    public int[] getFinalState1(int[] nums, int k, int multiplier) {
+        // 这是一个“按值排序，值相同则按下标排序”的最小堆。
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a,b) -> nums[a] != nums[b] ? nums[a] - nums[b] : a - b);
+        for (int i = 0; i < nums.length; i++) {
+            pq.offer(i);
+        }
+        while (k > 0){
+            Integer idx = pq.poll();
+            nums[idx] *= multiplier;
+            pq.offer(idx);
+            k--;
+        }
+        return nums;
+    }
 }
