@@ -1,4 +1,4 @@
-package pay;
+package designpattern.pay;
 
 public class PayDomainService {
     PayServiceFactory payServiceFactory;

@@ -1,4 +1,4 @@
-package pay;
+package designpattern.pay;
 
 // 微信支付
 public class WechatPayService extends AbstractPayService{

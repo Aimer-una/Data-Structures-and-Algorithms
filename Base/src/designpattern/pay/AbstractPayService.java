@@ -1,4 +1,4 @@
-package pay;
+package designpattern.pay;
 
 public abstract class AbstractPayService implements PayService{
     @Override
