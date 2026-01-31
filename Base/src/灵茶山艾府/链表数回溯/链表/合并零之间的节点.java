@@ -15,5 +15,5 @@ public class 合并零之间的节点 {
         }
         tail.next = null;
         return head;
-    }
+    }//
 }
