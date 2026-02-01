@@ -13,4 +13,21 @@ public class 将数组分成最小总代价的子数组I {
         }
         return ans;
     }
+
+    public int minimumCost1(int[] nums) {
+        // 第一小值
+        int fi = Integer.MAX_VALUE;
+        // 第二小值
+        int se = Integer.MAX_VALUE;
+        for (int i = 1; i < nums.length; i++) {
+            int x = nums[i];
+            if (x < fi){
+                se = fi;
+                fi = x;
+            }else if (x < se){
+                se = x;
+            }
+        }
+        return nums[0] + se + fi;
+    }
 }
