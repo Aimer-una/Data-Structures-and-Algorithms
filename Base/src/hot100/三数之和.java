@@ -28,10 +28,17 @@ public class 三数之和 {
         int n = nums.length;
         List<List<Integer>> result = new ArrayList<>();
         for (int i = 0; i < n - 2; i++) {
-            if (i != 0 && nums[i] == nums[i-1]){
+            int x = nums[i];
+            if (i != 0 && x == nums[i-1]){
                 continue;
             }
-            int x = nums[i];
+            if (x + nums[i+1] + nums[i+2] > 0){
+                break;
+            }
+            if (x + nums[n-1] + nums[n-2] < 0){
+                continue;
+            }
+
             int left = i + 1;
             int right = n - 1;
             while (left < right){
