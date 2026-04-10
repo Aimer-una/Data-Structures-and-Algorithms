@@ -24,4 +24,21 @@ public class 除了自身以外数组的乘积 {
         }
         return answer;
     }
+
+    // 空间复杂度O(1)
+    public int[] productExceptSelf1(int[] nums) {
+        int n = nums.length;
+        int[] ans = new int[n];
+        ans[0] = 1;
+        for (int i = 1; i < nums.length; i++) {
+            ans[i] = nums[i-1] * ans[i-1];
+        }
+
+        int r = 1;
+        for (int i = n-1; i >= 0; i--) {
+            ans[i] = ans[i] * r;
+            r *= nums[i];
+        }
+        return ans;
+    }
 }
