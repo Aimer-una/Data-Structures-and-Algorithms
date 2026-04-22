@@ -2,7 +2,9 @@ package hot100;
 
 import linkList.ListNode;
 
+
 public class 反转链表 {
+    // 迭代
     public ListNode reverseList(ListNode head) {
         ListNode pre = null;
         ListNode cur = head;
@@ -14,4 +16,17 @@ public class 反转链表 {
         }
         return pre;
     }
+
+    // 递归
+    public ListNode reverseList1(ListNode head) {
+        if (head == null || head.next == null){
+            return head;
+        }
+        ListNode revHead = reverseList(head.next);
+        ListNode tail = head.next;
+        tail.next = head;
+        head.next = null;
+        return revHead;
+    }
+
 }
