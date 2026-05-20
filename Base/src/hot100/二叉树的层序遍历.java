@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class 二叉树的层序遍历 {
-    // 两个数组的写法
+    //  两个数组的写法
     public List<List<Integer>> levelOrder(TreeNode root) {
         if (root == null){
             return List.of();
